@@ -1,10 +1,10 @@
-
-NAME ?= go-test-4
+NAME ?= isaac
 VERSION ?= 0.0.0
+LOG_LEVEL ?= debug
 
 .PHONY: build run version test coverage
 
-all: build run
+all: clean build run
 
 build:
 	@echo "Building app $(NAME) ..."
@@ -20,6 +20,9 @@ dev:
 
 version:
 	@echo $(VERSION)
+
+clean:
+	rm -f $(NAME)
 
 test:
 	@echo "Running unit tests .."
